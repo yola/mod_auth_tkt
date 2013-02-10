@@ -625,7 +625,7 @@ cookie_match(void *result, const char *key, const char *cookie)
 
     value = (char*) cookie;
     while ((value = strstr(value, cookie_name))) {
-      /* cookie_name must be preceded by a space or be at the very beginning */
+      /* cookie_name must be preceded by a space or a semicolon or be at the very beginning */
       if (value > cookie && (*(value-1) != ' ' && *(value-1) != ';')) {
         value++;
         continue;
